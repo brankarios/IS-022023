@@ -1,7 +1,8 @@
 # IS-022023
 
 ***
-Proyecto de la asignatura Ingeniería de Software, semestre 2-2023
+Proyecto de la asignatura Ingeniería de Software, semestre 2-2023.
+Este texto fue escrito desde Github.
 
 ## Tabla de contenido
 
