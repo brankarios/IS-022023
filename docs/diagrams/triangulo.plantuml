@@ -1,0 +1,11 @@
+@startuml triangulo
+
+class poligono
+
+class triangulo{
+
+    - int lados = 3
+}
+
+
+poligono <|-- triangulo

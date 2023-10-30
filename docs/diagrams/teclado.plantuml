@@ -1,0 +1,6 @@
+@startuml teclado
+
+class keyboard 
+class key 
+
+keyboard *-- "105..*"  key

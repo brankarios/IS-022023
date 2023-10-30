@@ -1,0 +1,48 @@
+@startuml reto 04 Diagrama de Clases
+
+class Persona{
+
+    - string Nombre
+    - string Dirección
+}
+
+class Entrenador{
+
+    - int nivelAcreditación
+    - int experiencia
+}
+
+class Jugador{
+
+    - int numeroCamisa
+    - bool Capitan
+}
+
+class Equipo{
+
+    - string Nombre
+}
+
+class Juego{
+
+    - string Localidad
+    - string Puntuación
+}
+
+class Registro{
+
+    - string fechaJuego
+    - int tiempoMuerto
+    - int faltas
+    - string ordenSaque
+}
+
+Persona <|-- Entrenador  
+Persona <|-- Jugador
+
+Entrenador "1" --o "*" Equipo
+Equipo "2" -- "*" Juego
+Equipo -- Registro
+Equipo "1" *-- "6..20" Jugador
+
+@enduml

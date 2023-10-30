@@ -1,0 +1,130 @@
+@startuml reto 04 Diagrama de Objectos 
+
+object venezuelaVScolombia{
+
+    localidad: Chile 
+    puntuación: 12 - 0 a favor de Venezuela
+}
+
+object Venezuela{
+
+    nombre: Diablos de Yare
+}
+
+object Colombia{
+
+    nombre: Chocorramos
+}
+
+object RegistroC{
+
+    fecha: 29102023
+    tiempo muerto: 2
+    faltas: 6
+    orden de saque: 4-2-8-9-3
+}
+
+object RegistroV{
+
+    fecha: 29102023
+    tiempo muerto: 1
+    faltas: 3
+    orden de saque: 9-1-4-3-2-7
+}
+
+object EntrenadorC{
+
+    nombre: Juan Londoño
+    teléfono: +57 432 23 225
+    dirección: Bogotá, Colombia
+    Nivel de Acreditación: 1
+    Experiencia: 2
+}
+
+object JugadorC1{
+
+    nombre: Pablo Gaviria
+    teléfono: +57 432 12 897
+    dirección: La Guajira, Colombia
+    númeroCamisa: 6
+    posición: delantero
+    capitan: true
+}
+
+object JugadorC2{
+
+    nombre: Gustavo Petro 
+    teléfono: +57 854 32 025
+    dirección: Arauca, Colombia 
+    númeroCamisa: 8
+    posición: Líbero
+    capitán: false 
+}
+
+object JugadorC3{
+
+    nombre: José Osorio
+    teléfono: +57 432 10 085
+    dirección: Cundinamarca, Colombia
+    númeroCamisa: 3
+    posición: Bloqueador Central 
+    capitán: false  
+}
+
+object EntrenadorV{
+
+    nombre: Marcos Jiménez
+    teléfono: +58 783 9023
+    dirección: Caracas, Venezuela
+    Nivel de Acreditación: 5
+    Experiencia: 10
+}
+
+object JugadorV1{
+
+    nombre: Edgar Ramírez
+    teléfono: +58 270 5423
+    dirección: Florida, EEUU
+    númeroCamisa: 7
+    posición: Delantero
+    capitán: true  
+}
+
+object JugadorV2{
+
+    nombre: José Paéz
+    teléfono: +58 980 2376
+    dirección: Sucre, Venezuela
+    númeroCamisa: 1
+    posición: Líbero
+    capitán: false  
+}
+
+object JugadorV3{
+
+    nombre: Félix Ribas
+    teléfono: +58 431 1256
+    dirección: Bolívar, Venezuela
+    númeroCamisa: 9
+    posición: Bloqueador Lateral
+    capitán: false  
+}
+
+
+venezuelaVScolombia --up Venezuela
+venezuelaVScolombia --down Colombia
+venezuelaVScolombia --right RegistroV
+venezuelaVScolombia --left RegistroC
+
+Venezuela --up EntrenadorV 
+Venezuela --right JugadorV1	
+Venezuela --left JugadorV2
+Venezuela --up JugadorV3
+Venezuela --up RegistroV
+
+Colombia --down EntrenadorC
+Colombia --right JugadorC1
+Colombia --left JugadorC2
+Colombia --down JugadorC3
+Colombia --down RegistroC
+
