@@ -1,0 +1,29 @@
+@startuml Reto 06 Diagrama de Estados
+
+[*] --> RecibiendoEncargo : encargarProducto()
+
+RecibiendoEncargo --> ValidandoEncargo : colocarPedido()
+
+ValidandoEncargo --> CobrandoEncargo : cobrar()
+
+CobrandoEncargo --> ObteniendoEncargo : buscar()
+
+state condicional  <<choice>>
+
+ObteniendoEncargo --> condicional : ¿El encargo es urgente?
+
+condicional --> EnviandoUrgentemente : Sí
+condicional --> EnviandoNormal : No
+
+EnviandoNormal --> RealizandoPedido : enviar()
+EnviandoUrgentemente --> RealizandoPedido : enviar()
+
+RealizandoPedido --> EnviandoRecibo : enviarR()
+RealizandoPedido --> AñadiendoListaClienteSatisfecho : añadirL()
+
+EnviandoRecibo --> [*]
+AñadiendoListaClienteSatisfecho --> [*]
+
+
+
+@enduml

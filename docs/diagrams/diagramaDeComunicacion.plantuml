@@ -1,0 +1,26 @@
+@startuml Reto 06 Diagrama de Comunicación 
+
+skinparam NoteBackgroundColor transparent
+skinparam NoteBorderColor transparent
+hide members
+allowmixing
+skinparam actorStyle awesome
+
+object ":Registro" as object1
+
+actor :Usuario: as User
+
+User  --right object1
+note on link: →\n1.comprar(Artículos)
+
+object ":Venta" as object2
+
+object1 --down object2
+note on link: 2.crearNuevaVenta()\n3.introducirArticulo(id,cantidad)\n5.finalizarVenta()\n↓
+
+object ":Lista" as object3
+
+object2 --right object3
+note on link: →\n4.crearVenta(precio,cantidad)
+
+@enduml 
