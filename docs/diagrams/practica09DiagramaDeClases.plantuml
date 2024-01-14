@@ -1,0 +1,66 @@
+@startuml Practica9ClassDiagram
+
+
+hide circle 
+
+class TurnOnDevices{
+
+    + main(Strings[] args)
+    + turnOnDevice(Connectable device)
+
+}
+
+class Connectable{
+
+    + turnOn()
+    + turnOff()
+    + isOn()
+
+}
+
+class Lamp{
+
+    + turnOn()
+    + turnOff()
+    + isOn()
+
+}
+
+class Computer{
+
+    + turnOn()
+    + turnOff()
+    + isOn()
+}
+
+class CoffeMaker{
+
+    + on()
+    + off()
+    + isOff()
+
+}
+
+class Adapter{
+
+    adaptee: CoffeMaker
+
+    + turnOn()
+    + turnOff()
+    + isOn()
+
+}
+
+TurnOnDevices --r-> Connectable
+
+Lamp --u|> Connectable
+
+Computer --u|> Connectable
+
+Adapter --u|> Connectable
+
+CoffeMaker --r-> Adapter
+
+
+
+@enduml
